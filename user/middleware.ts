@@ -5,7 +5,7 @@ import { clerkMiddleware } from '@clerk/nextjs/server'
 const clerk = clerkMiddleware()
 
 // Danh sách các đường dẫn công khai
-const publicRoutes = ['/public', '/about', '/contact']
+const publicRoutes = ["/:path*"]
 
 export default async function middleware(req: NextRequest, event: NextFetchEvent) {
     const pathname = req.nextUrl.pathname
